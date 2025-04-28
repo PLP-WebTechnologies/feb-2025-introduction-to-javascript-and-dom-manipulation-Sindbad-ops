@@ -24,3 +24,59 @@ Respond to user interactions.
 - Ensure semantic correctness.
 
 Happy Coding! 💻✨
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Webpage</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Welcome to My Interactive Webpage!</h1>
+    
+    <button id="changeTextButton">Change Text</button>
+    <button id="changeStyleButton">Change Style</button>
+    <button id="toggleElementButton">Toggle Element</button>
+
+    <div id="newElement" class="hidden">
+        <p>This is a new element added dynamically!</p>
+    </div>
+
+    <script>
+        // Change text content dynamically
+        const changeTextButton = document.getElementById("changeTextButton");
+        const title = document.getElementById("title");
+
+        changeTextButton.addEventListener("click", () => {
+            title.textContent = "Text Changed! JavaScript is Awesome!";
+        });
+
+        // Modify CSS styles via JavaScript
+        const changeStyleButton = document.getElementById("changeStyleButton");
+
+        changeStyleButton.addEventListener("click", () => {
+            title.classList.toggle("highlight");
+        });
+
+        // Add or remove an element
+        const toggleElementButton = document.getElementById("toggleElementButton");
+        const newElement = document.getElementById("newElement");
+
+        toggleElementButton.addEventListener("click", () => {
+            newElement.classList.toggle("hidden");
+        });
+    </script>
+</body>
+</html>
+
